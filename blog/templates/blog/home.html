@@ -1,0 +1,38 @@
+{% extends 'blog/base.html' %}
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+    {% for item in news %}
+        <div class="alert alert-light">
+            <h1>{{ item.title }}</h1>
+            <p>{{ item.text }}</p>
+            <span class="text-muted">Публикация: {{ item.date }}</span>
+            {% if item.author %}
+                <p><b>Автор:</b> <mark>{{ item.author }}</mark></p>
+            {% else %}
+                <p><b>Автор:</b> <mark>Админ</mark></p>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endblock %}
+{% block aside %}
+    <h4 class="mt-2">Интересные статьи</h4>
+    <img src="https://vseskazki.su/images/russkazka/medvezhonok-rasskaz.jpg" alt="" class="img-thumbnail">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur aut consequuntur culpa
+        facere labore non odit saepe sequi sunt? Aut cupiditate dicta esse fuga fugit, modi necessitatibus
+        temporibus tenetur.</p>
+    <a href="#" target="_blank">
+        <button class="btn btn-warning mb-4">Посмотреть</button>
+    </a>
+    <h4 class="mt-2">Интересные статьи</h4>
+    <img src="https://cdn25.img.ria.ru/images/141581/61/1415816178_0:250:2756:1800_600x0_80_0_0_b861cf123884b762ca96751cf5cc2c79.jpg.webp"
+         alt="" class="img-thumbnail">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur aut consequuntur culpa
+        facere labore non odit saepe sequi sunt? Aut cupiditate dicta esse fuga fugit, modi necessitatibus
+        temporibus tenetur.</p>
+    <a href="#" target="_blank">
+        <button class="btn btn-warning mb-4">Посмотреть</button>
+    </a>
+{% endblock %}
